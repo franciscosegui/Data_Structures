@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 public class CarregandoDados {
 	ArrayList<Product> products;
+	ArrayList<Product> dadosNodo = new ArrayList();
 
 	public void run() {
 		String archivoCSV = "C:/Users/Martín/Desktop/Products.csv";
@@ -41,10 +42,19 @@ public class CarregandoDados {
 	}
 	
 	public ArrayList<Product> getProducts(){
-		return products;
+		return dadosNodo;
 	}
 	
 	public void setProducts(ArrayList<Product> products) {
+		this.products = dadosNodo;
+	}
+	
+	public BinaryTree dadosTree() {
+		BinaryTree arbolBinario = new BinaryTree();
+		for (Product p: dadosNodo) {
+			arbolBinario.addNode(p.getId(), p);
+		}
+		return null;
 		
 	}
 }
