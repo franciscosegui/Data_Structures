@@ -42,10 +42,12 @@ public class CarregandoDados {
 	}
 	
 	public ArrayList<Product> getProducts(){
+		//return products;
 		return dadosNodo;
 	}
 	
 	public void setProducts(ArrayList<Product> products) {
+		//this.products =products;
 		this.products = dadosNodo;
 	}
 	
