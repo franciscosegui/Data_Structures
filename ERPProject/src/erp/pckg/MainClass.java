@@ -102,7 +102,7 @@ public class MainClass {
 		        if(a == 6) {
 		        	System.out.println("Digite o codigo do produto");
 		            int id = sc.nextInt();
-		            //produtomanage.
+		            produtomanage.getByIdBinary(id);
 		            
 		        	
 		        }

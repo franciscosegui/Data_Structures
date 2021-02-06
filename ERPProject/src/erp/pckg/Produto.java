@@ -151,7 +151,40 @@ public class Produto {
 		Node node = binarytree.getNode(id);
 		return node.getProduct();
     }
+	
+	
+    public void getByIdBinary(int id) {
+        Product product = binarySearch(id, products);
+        if (product != null) {
+            System.out.println("id:"+ product.getId());
+            System.out.println("Nome:"+ product.getNome());
+            System.out.println(product.getTotal() + "\n");
+        } else {
+            System.out.println("ID não cadastrada no banco de dados");
+        }
+    }
+	
+	 public Product binarySearch(int id, ArrayList<Product> products) {
+	        int tamanho = products.size();
+	        int metade = tamanho / 2;
+
+	        if (tamanho > 1) {
+	            if (products.get(metade).getId() == id) {
+	                return products.get(metade);
+	            } else if (products.get(metade).getId() > id) {
+	                ArrayList<Product> novoArray = (ArrayList<Product>) products.subList(0, metade);
+	                return binarySearch(id, novoArray);
+	            } else {
+	                ArrayList<Product> novoArray = (ArrayList<Product>) products.subList(metade, tamanho);
+	                return binarySearch(id, novoArray);
+	            }
+	        } else {
+	            return null;
+	        }
+	    }
+	
 }
+
 	
 	
 
