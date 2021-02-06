@@ -17,13 +17,15 @@ public class MainClass {
 
 	        cd.run(); 
 
-	        produtomanage = new Produto(cd.getProducts());
+	        produtomanage = new Produto(cd.getProducts(), cd.dadosTree());
 
 	        
 		        System.out.println("1 – Buscar por código");
 		        System.out.println("2 – Buscar por nome.");
 		        System.out.println("3 – Retirar por Código.");
 		        System.out.println("4 – Mostrar Stock dos produtos.");
+		        System.out.println("5 - Buscar produtos Binary Tree");
+		        System.out.println("6 – Buscar por produtos utilizando busca binária");
 
 		        Scanner sc = new Scanner(System.in);
 
@@ -71,7 +73,7 @@ public class MainClass {
 
 		            System.out.println("Remover por código\nDigite o codigo do produto para remover");
 		            int id = sc.nextInt();
-		            System.out.println("\n" + "Ingrese la cantidad");
+		            System.out.println("\n" + "Digite a quantidade");
 		            int quant = sc.nextInt();
 		            produtomanage.remover(id, quant);
 		            
@@ -83,9 +85,26 @@ public class MainClass {
 		            System.out.println("Digite o codigo do produto");
 		            int id = sc.nextInt();
 		            produtomanage.StockDeProdutos(id);
+		            
 
 		           
 
+		        }
+		        
+		        if (a == 5) 
+		        {
+		        	System.out.println("Digite o código");
+		        	int id = sc.nextInt();
+		        	
+		        	Product resultado = produtomanage.buscaBinaria(id);
+		        }
+		        
+		        if(a == 6) {
+		        	System.out.println("Digite o codigo do produto");
+		            int id = sc.nextInt();
+		            produtomanage.Id(id);
+		            
+		        	
 		        }
 
 		        

@@ -1,7 +1,7 @@
 package erp.pckg;
 
 public class BinaryTree {
-	Node root;
+	Node raiz;
 	
 	//Agregar nodos al BinaryTree
 	public void addNode(int key, Product product) {
@@ -9,11 +9,11 @@ public class BinaryTree {
 		Node newNode = new Node(key, product);
 		
 		//Nodo padre
-		if(root == null) {
-			root = newNode; //si es elemento root tiramos un nuevo elemento ahÃ­
+		if(raiz == null) {
+			raiz = newNode; //si es elemento root tiramos un nuevo elemento ahí
 		}else {
 			
-			Node focusNode = root; 
+			Node focusNode = raiz; 
 			
 			Node parent;
 			
@@ -21,7 +21,7 @@ public class BinaryTree {
 			{
 				parent = focusNode;//nodo padre es igual a nodo root
 				
-				//ver si nueveo nodo va a la derecha o izquierda del padre
+				//verificar si nuevo nodo va a la derecha o izquierda del padre
 				
 				if(key < focusNode.key) {
 					
@@ -61,6 +61,19 @@ public class BinaryTree {
 		}
 	}
 
+	public Node getNode(int k)
+	{
+		Node current = raiz;
+		while(current.key != k) {
+			if(k < current.key) {
+				current = current.leftChild;
+			}else {
+				current = current.rightChild;
+			}
+		}
+		return current;
+		
+	}
 }
 
 

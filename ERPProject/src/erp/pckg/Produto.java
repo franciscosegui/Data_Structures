@@ -7,9 +7,11 @@ import java.util.Scanner;
 
 public class Produto {
 	private ArrayList<Product> products;
+	private BinaryTree binarytree;
 	
-	public Produto(ArrayList<Product> products) {
+	public Produto(ArrayList<Product> products, BinaryTree binarytree) {
 		this.products = products;
+		this.binarytree = binarytree;
 	}
 	
 	public Product Id(int id) {
@@ -144,5 +146,12 @@ public class Produto {
         System.out.println("Feito");
 	}
 	
-	
+	public Product buscaBinaria(int id)
+	{
+		Node node = binarytree.getNode(id);
+		return node.getProduct();
+    }
 }
+	
+	
+
