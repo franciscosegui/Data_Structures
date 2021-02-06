@@ -96,13 +96,13 @@ public class MainClass {
 		        	System.out.println("Digite o código");
 		        	int id = sc.nextInt();
 		        	
-		        	Product resultado = produtomanage.buscaBinaria(id);
+		        	Product resultado = produtomanage.buscaABinario(id);
 		        }
 		        
 		        if(a == 6) {
 		        	System.out.println("Digite o codigo do produto");
 		            int id = sc.nextInt();
-		            produtomanage.Id(id);
+		            //produtomanage.
 		            
 		        	
 		        }

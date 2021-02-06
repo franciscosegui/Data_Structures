@@ -146,7 +146,7 @@ public class Produto {
         System.out.println("Feito");
 	}
 	
-	public Product buscaBinaria(int id)
+	public Product buscaABinario(int id)
 	{
 		Node node = binarytree.getNode(id);
 		return node.getProduct();
